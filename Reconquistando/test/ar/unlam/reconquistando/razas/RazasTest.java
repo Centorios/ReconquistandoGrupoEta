@@ -1,4 +1,4 @@
-package Razas;
+package ar.unlam.reconquistando.razas;
 
 import static org.junit.jupiter.api.Assertions.fail;
 

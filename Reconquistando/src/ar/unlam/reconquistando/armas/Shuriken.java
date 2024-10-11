@@ -1,4 +1,4 @@
-package Armas;
+package ar.unlam.reconquistando.armas;
 
 public class Shuriken extends Arma{
 
