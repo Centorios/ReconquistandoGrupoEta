@@ -19,15 +19,12 @@ public class Wrives extends Raza {
 	}
 
 	@Override
-	public int descansar() {
-		// TODO Auto-generated method stub
-		return 0;
+	public void descansar() {
+		
 	}
 
 	@Override
-	public int recibirDaño() {
-		// TODO Auto-generated method stub
-		return 0;
+	public void recibirDanio(int d) {
 	}
 	
 	public boolean isAtacado() {

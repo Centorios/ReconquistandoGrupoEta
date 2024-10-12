@@ -22,19 +22,14 @@ public class Redaiteran extends Raza {
 
 	@Override
 	public void atacar(Raza objetivo) {
-		// TODO Auto-generated method stub
-		
+		// Ver que onda el rango de ataque
+		int ataqueExtra = 3 * this.contadorDeAtaques;
+		objetivo.recibirDanio(this.arma.getAtaqueBasico() + ataqueExtra);
+		this.contadorDeAtaques++;
 	}
 
 	@Override
-	public int descansar() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int recibirDaño() {
-		// TODO Auto-generated method stub
-		return 0;
+	public void descansar() {
+		// no le sucede nada
 	}
 }

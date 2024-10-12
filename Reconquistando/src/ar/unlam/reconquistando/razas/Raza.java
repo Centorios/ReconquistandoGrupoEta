@@ -4,10 +4,10 @@ import ar.unlam.reconquistando.armas.Arma;
 
 public abstract class Raza {
 
-	private int saludInicial;
-	private int saludMaxima;
-	private int contadorDeTurnos;
-	private Arma arma;
+	protected int saludInicial;
+	protected int saludMaxima;
+	protected int contadorDeTurnos;
+	protected Arma arma;
 	
 	public Raza(int saludInicial, int saludMaxima, Arma arma) {
 		super();
@@ -18,8 +18,15 @@ public abstract class Raza {
 	}
 
 	public abstract void atacar(Raza objetivo);
-	public abstract int descansar();
-	public abstract int recibirDaño();
+	public abstract void descansar();
+	
+	public void recibirDanio(int danioRecibido) {
+		this.saludInicial -= danioRecibido;
+	}
+	
+	public boolean estaDesmayado() {
+		return saludInicial <= 0;
+	}
 	
 	// setters y getters
 	public int getSaludInicial() {
