@@ -17,7 +17,7 @@ public abstract class Raza {
 		this.arma = arma;
 	}
 
-	public abstract void atacar(Arma arma, Raza objetivo);
+	public abstract void atacar(Raza objetivo);
 	public abstract int descansar();
 	public abstract int recibirDaño();
 	
@@ -48,9 +48,5 @@ public abstract class Raza {
 
 	public Arma getArma() {
 		return arma;
-	}
-
-	public void setArma(Arma arma) {
-		this.arma = arma;
 	}
 }

@@ -1,6 +1,4 @@
 package ar.unlam.reconquistando.razas;
-
-import ar.unlam.reconquistando.armas.Arma;
 import ar.unlam.reconquistando.armas.Magia;
 
 public class Wrives extends Raza {
@@ -15,7 +13,7 @@ public class Wrives extends Raza {
 	}
 
 	@Override
-	public void atacar(Arma arma, Raza objetivo) {
+	public void atacar(Raza objetivo) {
 		// TODO Auto-generated method stub
 		
 	}

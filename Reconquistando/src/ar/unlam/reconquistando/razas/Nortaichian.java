@@ -1,7 +1,6 @@
 package ar.unlam.reconquistando.razas;
 
 import ar.unlam.reconquistando.armas.Arco;
-import ar.unlam.reconquistando.armas.Arma;
 
 public class Nortaichian extends Raza {
 
@@ -15,9 +14,8 @@ public class Nortaichian extends Raza {
 	}
 	
 	@Override
-	public void atacar(Arma arma, Raza objetivo) {
+	public void atacar(Raza objetivo) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
