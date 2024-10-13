@@ -13,6 +13,7 @@ import ar.unlam.reconquistando.armas.Arco;
 class NortaichianTest {
 
 	private Nortaichian nortaichian;
+	private Redaiteran radaiteranAtacado;
 
 	@BeforeEach
 	void setUp() {
@@ -26,6 +27,42 @@ class NortaichianTest {
 		assertEquals(66, nortaichian.getSaludMaxima());
 		assertEquals(0, nortaichian.getContadorDeTurnos());
 		assertInstanceOf(Arco.class, nortaichian.getArma());
+	}
+	
+	@Test
+	void testAtacarSinFuria() {		
+		assertEquals(0, nortaichian.getContadorFuria());
+		assertEquals(false, nortaichian.isPiedra());
+		nortaichian.atacar(radaiteranAtacado);
+		assertEquals(66, nortaichian.getSaludInicial());
+	}
+	
+	@Test
+	void testAtacarConFuria() {		
+		nortaichian.recibirDanio(10);
+		assertEquals(2, nortaichian.getContadorFuria());
+		assertEquals(false, nortaichian.isPiedra());
+		nortaichian.atacar(radaiteranAtacado);
+		assertEquals(1, nortaichian.getContadorFuria());
+	}
+	
+	@Test
+	void testAtacarSiendoPiedra() {		
+		nortaichian.descansar();
+		nortaichian.atacar(radaiteranAtacado);
+		assertEquals(true, nortaichian.isPiedra());
+	}
+	
+	@Test
+	void testRecibirDanio() {
+		nortaichian.recibirDanio(50);
+		
+		assertEquals(2, nortaichian.getContadorFuria());
+		assertEquals(16, nortaichian.getSaludInicial());
+		
+		nortaichian.descansar();
+		nortaichian.recibirDanio(10);
+		assertEquals(61, nortaichian.getSaludInicial());
 	}
 
 	@Test
@@ -44,5 +81,8 @@ class NortaichianTest {
 		
 		nortaichian.setPiedra(true);
 		assertEquals(true, nortaichian.isPiedra());
+		
+		nortaichian.setContadorFuria(2);
+		assertEquals(2, nortaichian.getContadorFuria());
 	}
 }

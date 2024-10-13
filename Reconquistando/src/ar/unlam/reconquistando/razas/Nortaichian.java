@@ -1,6 +1,7 @@
 package ar.unlam.reconquistando.razas;
 
 import ar.unlam.reconquistando.armas.Arco;
+import ar.unlam.reconquistando.escenario.eBando;
 
 public class Nortaichian extends Raza {
 
@@ -10,8 +11,8 @@ public class Nortaichian extends Raza {
 	
 	private static final int SALUD_INICIAL = 66;
 	
-	public Nortaichian() {
-		super(SALUD_INICIAL, SALUD_INICIAL, new Arco());
+	public Nortaichian(eBando bando) {
+		super(SALUD_INICIAL, SALUD_INICIAL, new Arco(), bando);
 	}
 	
 	@Override
@@ -25,7 +26,8 @@ public class Nortaichian extends Raza {
 		
 		if(!this. piedra) {
 			objetivo.recibirDanio(danio);
-			super.saludInicial += super.saludInicial * 0.04;
+			if(SALUD_INICIAL < (super.saludInicial + super.saludInicial * 0.04))
+				super.saludInicial += super.saludInicial * 0.04;
 		}
 	}
 

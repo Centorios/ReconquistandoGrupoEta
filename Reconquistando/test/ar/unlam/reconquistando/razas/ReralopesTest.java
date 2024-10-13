@@ -27,7 +27,28 @@ class ReralopesTest {
 		assertEquals(0, reralopes.getContadorDeTurnos());
 		assertInstanceOf(Catapulta.class, reralopes.getArma());
 	}
+	
+	@Test
+	void testAtacar() {
+		reralopes.setContadorAtaques(0);
+		reralopes.atacar(reralopes);
+		
+		reralopes.setContadorAtaques(1);
+		reralopes.atacar(reralopes);
+	}
 
+	@Test
+	void testDescansar() {
+		reralopes.descansar();
+		assertEquals(3, reralopes.getContadorAtaques());
+	}
+	
+	@Test
+	void testRecibirDanio() {
+		reralopes.recibirDanio(10);
+		assertEquals(0, reralopes.getContadorAtaques());
+	}
+	
 	@Test
 	void testSettersAndGetters() {
 		reralopes.setSaludInicial(150);
@@ -38,5 +59,8 @@ class ReralopesTest {
 
 		reralopes.setContadorDeTurnos(5);
 		assertEquals(5, reralopes.getContadorDeTurnos());
+		
+		reralopes.setContadorAtaques(1);
+		assertEquals(1, reralopes.getContadorAtaques());
 	}
 }

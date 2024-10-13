@@ -3,14 +3,15 @@ package ar.unlam.reconquistando.razas;
 import java.util.Random;
 
 import ar.unlam.reconquistando.armas.Catapulta;
+import ar.unlam.reconquistando.escenario.eBando;
 
 public class Reralopes extends Raza {
 
 	private int contadorAtaques = 0;
 	private static final int SALUD_INICIAL = 53;
 
-	public Reralopes() {
-		super(SALUD_INICIAL, SALUD_INICIAL, new Catapulta());
+	public Reralopes(eBando bando) {
+		super(SALUD_INICIAL, SALUD_INICIAL, new Catapulta(), bando);
 	}
 
 	@Override
@@ -38,5 +39,13 @@ public class Reralopes extends Raza {
 	public void recibirDanio(int danio) {
 		this.contadorAtaques = 0;
 		super.recibirDanio(danio);
+	}
+	
+	public int getContadorAtaques() {
+		return contadorAtaques;
+	}
+
+	public void setContadorAtaques(int contadorAtaques) {
+		this.contadorAtaques = contadorAtaques;
 	}
 }

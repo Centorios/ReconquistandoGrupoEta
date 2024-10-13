@@ -1,6 +1,7 @@
 package ar.unlam.reconquistando.razas;
 
 import ar.unlam.reconquistando.armas.Shuriken;
+import ar.unlam.reconquistando.escenario.eBando;
 
 public class Redaiteran extends Raza {
 
@@ -8,8 +9,8 @@ public class Redaiteran extends Raza {
 	
 	private static final int SALUD_INICIAL = 36;
 
-	public Redaiteran() {
-		super(SALUD_INICIAL, SALUD_INICIAL, new Shuriken());
+	public Redaiteran(eBando bando) {
+		super(SALUD_INICIAL, SALUD_INICIAL, new Shuriken(), bando);
 	}
 
 	public int getContadorDeAtaques() {

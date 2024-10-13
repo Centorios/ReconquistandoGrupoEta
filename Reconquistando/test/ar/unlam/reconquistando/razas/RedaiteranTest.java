@@ -28,6 +28,17 @@ class RedaiteranTest {
 	}
 
 	@Test
+	void testAtacar() {
+		redaiteran.atacar(redaiteran);
+		assertEquals(1, redaiteran.getContadorDeAtaques());
+	}
+	
+	@Test
+	void testDescansar() {
+		redaiteran.descansar();
+	}
+	
+	@Test
 	void testSettersAndGetters() {
 		redaiteran.setSaludInicial(150);
 		assertEquals(150, redaiteran.getSaludInicial());

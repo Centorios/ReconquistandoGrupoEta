@@ -1,5 +1,6 @@
 package ar.unlam.reconquistando.razas;
 import ar.unlam.reconquistando.armas.Magia;
+import ar.unlam.reconquistando.escenario.eBando;
 
 public class Wrives extends Raza {
 	private boolean pacifico = false;
@@ -7,8 +8,8 @@ public class Wrives extends Raza {
 	private static final int AUMENTO_SALUD = 50;
 	private static final int SALUD_INICIAL = 108;
 
-	public Wrives() {
-		super(SALUD_INICIAL, SALUD_INICIAL, new Magia());
+	public Wrives(eBando bando) {
+		super(SALUD_INICIAL, SALUD_INICIAL, new Magia(), bando);
 	}
 
 	@Override
