@@ -38,7 +38,7 @@ class WrivesTest {
 		wrives.setContadorDeTurnos(5);
 		assertEquals(5, wrives.getContadorDeTurnos());
 		
-		wrives.setAtacado(true);
-		assertEquals(true, wrives.isAtacado());
+		wrives.setPacifico(true);
+		assertEquals(true, wrives.isPacifico());
 	}
 }
