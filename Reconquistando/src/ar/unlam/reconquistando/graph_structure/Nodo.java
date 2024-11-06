@@ -1,4 +1,4 @@
-package graph_structure;
+package ar.unlam.reconquistando.graph_structure;
 import java.util.Objects;
 
 public class Nodo {

@@ -7,6 +7,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.Assert;
 import org.junit.jupiter.api.TestInstance;
 
+import ar.unlam.reconquistando.graph_structure.Camino;
+import ar.unlam.reconquistando.graph_structure.Mapa;
+import ar.unlam.reconquistando.graph_structure.Nodo;
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class Map_Test_File {
 

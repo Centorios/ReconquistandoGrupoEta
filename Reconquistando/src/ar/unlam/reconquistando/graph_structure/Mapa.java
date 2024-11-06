@@ -1,4 +1,4 @@
-package graph_structure;
+package ar.unlam.reconquistando.graph_structure;
 
 import java.util.*;
 
@@ -25,7 +25,7 @@ public class Mapa {
 		Nodo nodo = new Nodo(nombre, habitantes, raza, tipo);
 
 		 if (listaAdyacencia.containsKey(nodo)) {
-		        return false; 
+		        return false;
 		    }
 		 listaAdyacencia.put(nodo, new ArrayList<>());
 		 return true;
@@ -35,8 +35,8 @@ public class Mapa {
 		Nodo origen = buscarNodo(nombreOrigen);
 		Nodo destino = buscarNodo(nombreDestino);
 		if (origen != null && destino != null) {
-			listaAdyacencia.get(origen).add(new Camino(destino, distancia));
-			listaAdyacencia.get(destino).add(new Camino(origen, distancia));
+			listaAdyacencia.get(origen).add(new Camino(nombreDestino, distancia));
+			listaAdyacencia.get(destino).add(new Camino(nombreOrigen, distancia));
 		}
 	}
 
